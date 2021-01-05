@@ -4,7 +4,7 @@
 import { IdealLogo } from '@paypal/sdk-logos/src';
 import { Fragment, node } from 'jsx-pragmatic/src';
 
-import { BUTTON_LAYOUT } from '../../constants';
+import { BUTTON_LABEL, BUTTON_LAYOUT } from '../../constants';
 import { DEFAULT_FUNDING_CONFIG, type FundingSourceConfig, BasicLabel } from '../common';
 import { Text, Space } from '../../ui/text';
 
@@ -16,6 +16,15 @@ export function getIdealConfig() : FundingSourceConfig {
     
         layouts: [
             BUTTON_LAYOUT.VERTICAL
+        ],
+
+        labels: [
+            BUTTON_LABEL.PAYPAL,
+            BUTTON_LABEL.CHECKOUT,
+            BUTTON_LABEL.BUYNOW,
+            BUTTON_LABEL.PAY,
+            BUTTON_LABEL.INSTALLMENT,
+            BUTTON_LABEL.SUBSCRIBE
         ],
 
         Logo: ({ logoColor, optional }) => IdealLogo({ logoColor, optional }),

@@ -3,7 +3,7 @@
 
 import { TrustlyLogo } from '@paypal/sdk-logos/src';
 
-import { BUTTON_LAYOUT } from '../../constants';
+import { BUTTON_LABEL, BUTTON_LAYOUT } from '../../constants';
 import { DEFAULT_FUNDING_CONFIG, type FundingSourceConfig } from '../common';
 
 export function getTrustlyConfig() : FundingSourceConfig {
@@ -14,6 +14,15 @@ export function getTrustlyConfig() : FundingSourceConfig {
     
         layouts: [
             BUTTON_LAYOUT.VERTICAL
+        ],
+
+        labels: [
+            BUTTON_LABEL.PAYPAL,
+            BUTTON_LABEL.CHECKOUT,
+            BUTTON_LABEL.BUYNOW,
+            BUTTON_LABEL.PAY,
+            BUTTON_LABEL.INSTALLMENT,
+            BUTTON_LABEL.SUBSCRIBE
         ],
 
         Logo: ({ logoColor, optional }) => TrustlyLogo({ logoColor, optional })

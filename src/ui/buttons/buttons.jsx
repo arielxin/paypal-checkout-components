@@ -96,9 +96,9 @@ export function Buttons(props : ButtonsProps) : ElementNode {
     const { onClick = noop } = props;
     const { wallet, fundingSource, style, locale, remembered, env, fundingEligibility, platform, commit, vault,
         nonce, components, onShippingChange, personalization, userIDToken, content, flow, experiment } = normalizeButtonProps(props);
-    const { layout, shape, tagline } = style;
+    const { layout, shape, tagline, label } = style;
 
-    const fundingSources = determineEligibleFunding({ fundingSource, layout, remembered, platform, fundingEligibility, components, onShippingChange, flow, wallet });
+    const fundingSources = determineEligibleFunding({ fundingSource, layout, remembered, platform, fundingEligibility, components, onShippingChange, flow, wallet, label });
     const multiple = fundingSources.length > 1;
 
     if (!fundingSources.length) {
