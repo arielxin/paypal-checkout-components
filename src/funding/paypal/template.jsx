@@ -113,7 +113,7 @@ function getButtonPersonalizationStyle(opts : LabelOptions) : ?ChildType {
     );
 }
 
-function ButtonPersonalization(opts : LabelOptions) : ?ChildType {
+export function ButtonPersonalization(opts : LabelOptions) : ?ChildType {
     if (__WEB__) {
         return;
     }

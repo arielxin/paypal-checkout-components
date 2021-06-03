@@ -1,13 +1,15 @@
 /* @flow */
 /** @jsx node */
 
+import { node, Fragment } from 'jsx-pragmatic/src';
 import { LOGO_COLOR } from '@paypal/sdk-logos/src';
 import { FUNDING_BRAND_LABEL } from '@paypal/sdk-constants/src';
 
-import { BUTTON_COLOR, BUTTON_LAYOUT, BUTTON_FLOW } from '../../constants';
+import { BUTTON_COLOR, BUTTON_LABEL, BUTTON_LAYOUT, BUTTON_FLOW } from '../../constants';
 import { DEFAULT_FUNDING_CONFIG, type FundingSourceConfig } from '../common';
+import { componentContent } from '../content';
 
-import { Logo, Label, WalletLabel, Tag } from './template';
+import { ButtonPersonalization, Logo, WalletLabel, Tag } from './template';
 
 export function getPayPalConfig() : FundingSourceConfig {
     return {
@@ -43,7 +45,50 @@ export function getPayPalConfig() : FundingSourceConfig {
         labelText: `${ FUNDING_BRAND_LABEL.PAYPAL }`,
 
         Logo,
-        Label,
+
+        Label: ({ ...opts }) => {
+            const BasicLabel = ({ logo, label, period, locale: { lang } }) => {
+                if (__WEB__) {
+                    return logo;
+                }
+            
+                const { Checkout, Pay, BuyNow, Installment, Subscribe, Donate } = componentContent[lang];
+            
+                if (label === BUTTON_LABEL.CHECKOUT) {
+                    return <Checkout logo={ logo } />;
+                }
+            
+                if (label === BUTTON_LABEL.SUBSCRIBE && Subscribe) {
+                    return <Subscribe logo={ logo } />;
+                }
+                
+                if (label === BUTTON_LABEL.DONATE && Donate) {
+                    return <Donate logo={ logo } />;
+                }
+            
+                if (label === BUTTON_LABEL.PAY) {
+                    return <Pay logo={ logo } />;
+                }
+            
+                if (label === BUTTON_LABEL.BUYNOW) {
+                    return <BuyNow logo={ logo } />;
+                }
+            
+                if (label === BUTTON_LABEL.INSTALLMENT && Installment) {
+                    return <Installment logo={ logo } period={ period } />;
+                }
+            
+                return logo;
+            };
+
+            return (
+                <Fragment>
+                    <BasicLabel { ...opts } />
+                    <ButtonPersonalization { ...opts } />
+                </Fragment>
+            );
+        },
+
         WalletLabel,
         Tag
     };
