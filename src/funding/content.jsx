@@ -36,7 +36,8 @@ export const componentContent : ContentMap = {
         Subscribe:   ({ logo }) => <Fragment>{ logo }<Text animate optional> Абониране</Text></Fragment>,
         SaferTag:    () => <Text animate optional>По-безопасният и по-лесен начин за плащане</Text>,
         Pay:         ({ logo }) => <Fragment><Text animate optional>Плащане с </Text>{ logo }</Fragment>,
-        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Купете сега</Text></Fragment>
+        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Купете сега</Text></Fragment>,
+        Donate:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Дарение</Text></Fragment>
     },
     cs: {
         Checkout:  ({ logo }) => <Fragment><Text animate optional>Zaplatit přes </Text>{ logo }</Fragment>,
@@ -112,7 +113,8 @@ export const componentContent : ContentMap = {
         Subscribe:   ({ logo }) => <Fragment>{ logo }<Text animate optional> Tellige</Text></Fragment>,
         SaferTag:    () => <Text animate optional>Ohutum ja lihtsam viis maksmiseks</Text>,
         Pay:         ({ logo }) => <Fragment><Text animate optional>Makske </Text>{ logo }</Fragment>,
-        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Osta kohe</Text></Fragment>
+        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Osta kohe</Text></Fragment>,
+        Donate:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Annetage</Text></Fragment>
     },
     fi: {
         Checkout:  ({ logo }) => <Fragment>{ logo }<Text animate optional>-maksu</Text></Fragment>,
@@ -183,21 +185,24 @@ export const componentContent : ContentMap = {
         Subscribe:   ({ logo }) => <Fragment>{ logo }<Text animate optional> prenumeruoti</Text></Fragment>,
         SaferTag:    () => <Text animate optional>Saugesnis ir paprastesnis mokėjimo būdas</Text>,
         Pay:         ({ logo }) => <Fragment><Text animate optional>Mokėti naudojant </Text>{ logo }</Fragment>,
-        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional> pirkti dabar</Text></Fragment>
+        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional> pirkti dabar</Text></Fragment>,
+        Donate:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Paaukoti</Text></Fragment>
     },
     lv: {
         Checkout:    ({ logo }) => <Fragment>{ logo }<Text animate optional> Checkout</Text></Fragment>,
         Subscribe:   ({ logo }) => <Fragment>{ logo }<Text animate optional> abonēt</Text></Fragment>,
         SaferTag:    () => <Text animate optional>Drošāks, ērtāks norēķinu veids</Text>,
         Pay:         ({ logo }) => <Fragment><Text animate optional>Maksāt ar </Text>{ logo }</Fragment>,
-        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional>  pirkt tūlīt </Text></Fragment>
+        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional>  pirkt tūlīt </Text></Fragment>,
+        Donate:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Ziedot</Text></Fragment>
     },
     ms: {
         Checkout:    ({ logo }) => <Fragment><Text animate optional>Daftar keluar </Text>{ logo }</Fragment>,
         Subscribe:   ({ logo }) => <Fragment><Text animate optional>Langgan </Text>{ logo }</Fragment>,
         SaferTag:    () => <Text animate optional>Kaedah bayaran yang lebih selamat dan mudah</Text>,
         Pay:         ({ logo }) => <Fragment><Text animate optional>Bayar dengan </Text>{ logo }</Fragment>,
-        BuyNow:      ({ logo }) => <Fragment><Text animate optional>Beli Sekarang </Text>{ logo }</Fragment>
+        BuyNow:      ({ logo }) => <Fragment><Text animate optional>Beli Sekarang </Text>{ logo }</Fragment>,
+        Donate:      ({ logo }) => <Fragment><Text animate optional>Derma </Text>{ logo }</Fragment>
     },
     nl: {
         Checkout:  ({ logo }) => <Fragment>{ logo }<Text animate optional> Betalen</Text></Fragment>,
@@ -262,7 +267,8 @@ export const componentContent : ContentMap = {
         Subscribe:   ({ logo }) => <Fragment>{ logo }<Text animate optional> දායක වන්න</Text></Fragment>,
         SaferTag:    () => <Text animate optional>ගෙවීමට වඩා ආරක්ෂිත, පහසු ක්‍රමය</Text>,
         Pay:         ({ logo }) => <Fragment>{ logo }<Text animate optional> සමග ගෙවන්න</Text></Fragment>,
-        BuyNow:             ({ logo }) => <Fragment>{ logo }<Text animate optional> දැන් මිලදී ගන්න</Text></Fragment>
+        BuyNow:             ({ logo }) => <Fragment>{ logo }<Text animate optional> දැන් මිලදී ගන්න</Text></Fragment>,
+        Donate:    ({ logo }) => <Fragment>{ logo }<Text animate optional> පරිත්‍යාග කරන්න</Text></Fragment>
     },
     sk: {
         Checkout:  ({ logo }) => <Fragment><Text animate optional>Zaplatiť cez </Text>{ logo }</Fragment>,
@@ -277,14 +283,16 @@ export const componentContent : ContentMap = {
         Subscribe:   ({ logo }) => <Fragment>{ logo }<Text animate optional> Naroči se</Text></Fragment>,
         SaferTag:    () => <Text animate optional>Varnejši, lažji način plačil</Text>,
         Pay:         ({ logo }) => <Fragment><Text animate optional>Plačaj z </Text>{ logo }</Fragment>,
-        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Kupi zdaj</Text></Fragment>
+        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Kupi zdaj</Text></Fragment>,
+        Donate:    ({ logo }) => <Fragment>{ logo }<Text animate optional> Donirajte</Text></Fragment>
     },
     sq: {
         Checkout:    ({ logo }) => <Fragment><Text animate optional>Arka e </Text>{ logo }</Fragment>,
         Subscribe:   ({ logo }) => <Fragment><Text animate optional>Abonohu në </Text>{ logo }</Fragment>,
         SaferTag:    () => <Text animate optional>Mënyra më e sigurt dhe më e lehtë për të paguar</Text>,
         Pay:         ({ logo }) => <Fragment><Text animate optional>Paguaj me </Text>{ logo }</Fragment>,
-        BuyNow:             ({ logo }) => <Fragment><Text animate optional>Bli tani me </Text>{ logo }</Fragment>
+        BuyNow:             ({ logo }) => <Fragment><Text animate optional>Bli tani me </Text>{ logo }</Fragment>,
+        Donate:    ({ logo }) => <Fragment><Text animate optional>Dhuro </Text>{ logo }</Fragment>
     },
     sv: {
         Checkout:  ({ logo }) => <Fragment>{ logo }<Text animate optional> Betala</Text></Fragment>,
@@ -307,7 +315,8 @@ export const componentContent : ContentMap = {
         Subscribe:   ({ logo }) => <Fragment>{ logo }<Text animate optional> Mag-subscribe</Text></Fragment>,
         SaferTag:    () => <Text animate optional>Ang mas ligtas, mas madaling paraan para magbayad</Text>,
         Pay:         ({ logo }) => <Fragment><Text animate optional>Magbayad gamit ang </Text>{ logo }</Fragment>,
-        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Bumili Ngayon</Text></Fragment>
+        BuyNow:      ({ logo }) => <Fragment>{ logo }<Text animate optional> Bumili Ngayon</Text></Fragment>,
+        Donate:    ({ logo }) => <Fragment>{ logo }<Text animate optional> Mag-donate</Text></Fragment>
     },
     tr: {
         Checkout:  ({ logo }) => <Fragment>{ logo }<Text animate optional> ile Satın Alın</Text></Fragment>,
