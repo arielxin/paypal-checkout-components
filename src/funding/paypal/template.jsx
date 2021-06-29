@@ -6,7 +6,7 @@ import { PPLogo, PayPalLogo, CreditLogo, CreditMark, PayPalMark, GlyphCard, Glyp
 import { FUNDING, WALLET_INSTRUMENT } from '@paypal/sdk-constants/src';
 
 import { type LogoOptions, type LabelOptions, type WalletLabelOptions, type TagOptions, BasicLabel } from '../common';
-import { CLASS, ATTRIBUTE, BUTTON_LAYOUT } from '../../constants';
+import { CLASS, ATTRIBUTE, BUTTON_LABEL, BUTTON_LAYOUT } from '../../constants';
 import { componentContent } from '../content';
 import { Text, Space, PlaceHolder } from '../../ui/text';
 import { TrackingBeacon } from '../../ui/tracking';
@@ -113,7 +113,7 @@ function getButtonPersonalizationStyle(opts : LabelOptions) : ?ChildType {
     );
 }
 
-export function ButtonPersonalization(opts : LabelOptions) : ?ChildType {
+function ButtonPersonalization(opts : LabelOptions) : ?ChildType {
     if (__WEB__) {
         return;
     }
@@ -148,9 +148,19 @@ export function ButtonPersonalization(opts : LabelOptions) : ?ChildType {
 
 
 export function Label(opts : LabelOptions) : ChildType {
+    const BasicLabelForPayPal = ({ logo, label, locale: { lang } }) => {
+        const { Donate } = componentContent[lang];
+
+        if (label === BUTTON_LABEL.DONATE && Donate) {
+            return <Donate logo={ logo } />;
+        }
+    
+        return BasicLabel(opts);
+    };
+
     return (
         <Fragment>
-            <BasicLabel { ...opts } />
+            <BasicLabelForPayPal { ...opts } />
             <ButtonPersonalization { ...opts } />
         </Fragment>
     );
